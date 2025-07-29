@@ -6,7 +6,6 @@ import {
   IsEmail,
   IsNotEmpty,
   MinLength,
-  Max,
 } from 'class-validator';
 
 export class CreateUserDto {
@@ -17,11 +16,6 @@ export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
   name: string;
-
-  @IsNumber()
-  @IsNotEmpty()
-  @Max(100)
-  age: number;
 
   @IsEmail()
   @IsNotEmpty()
