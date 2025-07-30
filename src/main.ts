@@ -13,13 +13,14 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('Cats example')
-    .setDescription('The cats API description')
+    .setTitle('API - Auth')
+    .setDescription('API de prueba para login y registro de usuarios')
     .setVersion('1.0')
-    .addTag('cats')
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, documentFactory);
+
+  app.enableCors();
 
   await app.listen(process.env.PORT ?? 3000);
 }
